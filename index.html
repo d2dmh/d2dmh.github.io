@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="个人研究主页：研究经历、论文、项目与生活记录。">
+<meta name="theme-color" content="#050505"><title>你的姓名 · 个人主页</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="reference.css"><link rel="stylesheet" href="contact-dock.css">
+<script defer src="content.js"></script><script defer src="site-core.js"></script><script defer src="assets/portrait-default.js"></script><script defer src="portrait.js"></script><script defer src="assets/contact-icons.js"></script><script defer src="contact-dock.js"></script><script defer src="app.js"></script><script defer src="city.js"></script>
+</head>
+<body>
+<a class="skip" href="#resume">跳过首屏，阅读内容</a>
+<header class="topbar">
+ <div class="language" aria-label="语言"><button id="lang-zh" class="chosen" lang="zh">中文</button><span>|</span><button id="lang-en" lang="en">EN</button></div>
+ <nav class="pillnav" aria-label="主导航" id="desktop-nav"></nav>
+ <button class="menu-toggle" id="menu-toggle" aria-label="打开导航" aria-expanded="false"><span></span><span></span></button>
+ <nav class="mobile-nav" id="mobile-nav" aria-label="移动导航" hidden></nav>
+</header>
+<aside class="rail" aria-label="章节导航" id="rail"></aside>
+<main>
+ <section id="home" class="hero">
+  <canvas id="city" aria-hidden="true"></canvas><div class="hero-vignette"></div>
+  <div class="hero-overlay"><div class="hero-glass">
+   <h1 id="greeting"></h1><p class="hero-subtitle" id="hero-subtitle"></p><p class="hero-description" id="hero-description"></p>
+   <a class="hero-cta" href="#resume"><span class="cta-dot"></span><span data-label="cvButton">查看简历</span><span class="cta-arrow">↗</span></a>
+  </div></div>
+
+ </section>
+ <section id="resume" class="content-section"><div class="container">
+  <header class="section-heading"><h2 data-label="resume">简历</h2></header>
+  <div class="resume-top"><p id="resume-intro"></p><a id="cv-link" class="quiet-link" hidden>下载完整简历 ↗</a></div>
+  <div id="resume-sections"></div>
+ </div></section>
+ <section id="publications" class="content-section"><div class="container">
+  <header class="section-heading"><h2 data-label="publications">代表性论文</h2></header>
+  <div id="publication-list" class="publication-list"></div>
+ </div></section>
+ <section id="projects" class="content-section"><div class="container">
+  <header class="section-heading"><h2 data-label="projects">研究项目</h2></header>
+  <div id="project-list" class="projects-grid"></div>
+ </div></section>
+ <section id="about" class="content-section about-section"><div class="container">
+  <header class="section-heading"><h2 data-label="about">关于我</h2></header>
+  <div class="about-grid"><div><h3 id="about-name"></h3><p id="about-text" class="about-text"></p></div><div id="portrait" class="portrait"><canvas id="portrait-canvas" width="300" height="450" role="img" aria-label="个人照片的交互像素肖像" data-photo-source="user-provided"></canvas></div></div>
+  <h3 class="group-title" data-label="researchInterests">研究兴趣</h3><div id="about-interests" class="skills"></div>
+  <h3 class="group-title" data-label="contactTitle">联系我</h3><p id="contact-text" class="about-text"></p><div id="contact-links" class="contact-dock-frame"></div><p id="location" class="location"></p><p id="about-quote" class="about-quote"></p>
+  <footer class="footer"><span id="copyright"></span><a href="#home" data-label="backTop">回到顶部 ↑</a></footer>
+ </div></section>
+</main>
+<aside class="badge-scene" aria-label="可拖动个人名牌"><div class="badge-string"></div><div id="badge" class="badge" role="img" aria-label="拖动个人名牌"><div class="badge-clip"></div><div class="badge-head">RESEARCHER <span>↗</span></div><div class="badge-avatar" id="badge-avatar">Y</div><div class="badge-name" id="badge-name"></div><div class="badge-role" id="badge-role"></div><div class="badge-code">PERSONAL / PORTFOLIO</div></div></aside>
+<div class="utility"><button id="motion-toggle" aria-pressed="false" title="暂停动画">Ⅱ</button><button id="edit-open" hidden><span class="edit-dot"></span><span data-label="edit">编辑内容</span></button></div>
+<dialog id="detail-dialog" class="detail-dialog"><button class="dialog-close" id="detail-close" aria-label="关闭详情">×</button><div id="detail-content"></div></dialog>
+<dialog id="editor" class="editor"><header class="editor-head"><div><span class="eyebrow">MAKE IT YOURS</span><h2>填写你的内容</h2></div><button id="editor-close" aria-label="关闭编辑">×</button></header><p class="editor-note">保存在当前浏览器的只是草稿。正式发布前，请导出 content.js，替换网站文件夹里的同名文件。</p><div class="editor-tabs" id="editor-tabs"></div><form id="editor-form"></form><div class="editor-status" id="editor-status" role="status"></div><footer class="editor-actions"><button id="editor-save" class="primary">保存并预览</button><button id="export-js">导出 content.js</button><button id="export-json">备份 JSON</button><label class="file-button">导入 JSON<input id="import-json" type="file" accept="application/json,.json" hidden></label><button id="reset-draft" class="danger">清除本地草稿</button></footer></dialog>
+<div id="toast" role="status"></div>
+<noscript><p>请启用 JavaScript 以显示网站内容。</p></noscript>
+</body></html>
